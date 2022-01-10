@@ -1,4 +1,5 @@
 import os
+
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
@@ -27,9 +28,7 @@ tagger_ner = load_flair_ner("ner-fast")
 # Alternatively, using n-grams:
 tagger_ngram = Cmns(base_url, wiki_version, n=5)
 
-handler = make_handler(
-        base_url, wiki_version, model, tagger_ner
-    )
+handler = make_handler(base_url, wiki_version, model, tagger_ner)
 
 text_doc = "If you're going to try, go all the way - Charles Bukowski"
 post_data = {
@@ -41,7 +40,7 @@ text, spans = handler.read_json(post_data)
 response = handler.generate_response(text, spans)
 response
 
-'''
+"""
 server_address = ("127.0.0.1", 1235)
 server = HTTPServer(
     server_address,
@@ -55,4 +54,4 @@ try:
     server.serve_forever()
 except KeyboardInterrupt:
     exit(0)
-'''
+"""

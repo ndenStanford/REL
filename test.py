@@ -1,5 +1,6 @@
 import requests
-print('here')
+
+print("here")
 
 IP_ADDRESS = "http://localhost"
 PORT = "1235"
@@ -10,6 +11,8 @@ document = {
     "spans": [],  # in case of ED only, this can also be left out when using the API
 }
 
-API_result = requests.post("{}:{}".format(IP_ADDRESS, PORT), json=document)#.json()
-import pdb; pdb.set_trace()
+API_result = requests.post("{}:{}".format(IP_ADDRESS, PORT), json=document)  # .json()
+import pdb
+
+pdb.set_trace()
 print(API_result)
